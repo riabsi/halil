@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2e7d32">
+    
+    <!-- وسوم المشاركة (Open Graph) -->
+    <meta property="og:title" content="صدقة جارية عن روح المرحوم الحاج خليل محمد العبسي">
+    <meta property="og:description" content="صدقة جارية، القرآن الكريم وقصص الأنبياء. رحم الله والدي وأسكنه فسيح جناته.">
+    <!-- تم تحديث رابط الصورة الجديد -->
+    <meta property="og:image" content="https://i.ibb.co/7xpwpg9D/IMG-20260618-WA0016.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>صدقة جارية عن روح الحاج خليل محمد العبسي</title>
+    <style>
+        body { background-color: #ffffff; color: #333; font-family: sans-serif; margin: 0; padding: 15px; text-align: center; overflow-x: hidden; }
+        .header-box { border: 2px solid #2e7d32; padding: 15px; box-shadow: 0 0 15px #2e7d32; margin-bottom: 20px; border-radius: 10px; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #2e7d32; object-fit: cover; margin-bottom: 10px; }
+        .name-lg { font-size: 22px; color: #2e7d32; margin: 5px 0; }
+        .ayah { font-size: 14px; color: #555; margin-top: 5px; font-style: italic; }
+        .btn-container { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 20px; }
+        .btn { background: #f9f9f9; border: 1px solid #2e7d32; color: #2e7d32; padding: 12px; cursor: pointer; border-radius: 5px; font-size: 14px; transition: 0.3s; }
+        .btn:hover { background: #2e7d32; color: #fff; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; }
+        .modal-content { position: relative; margin: 5% auto; width: 90%; max-width: 600px; background: #fff; padding: 20px; border: 1px solid #2e7d32; border-radius: 10px; }
+        .close { position: absolute; top: 5px; right: 15px; cursor: pointer; font-size: 40px; color: #2e7d32; }
+        .surah-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 15px; }
+        .surah-btn { background: #f9f9f9; border: 1px solid #2e7d32; color: #2e7d32; padding: 8px; cursor: pointer; border-radius: 5px; font-size: 13px; }
+        .surah-btn:hover { background: #2e7d32; color: #fff; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 30px; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+
+<audio id="duaAudio" src="dua.mp3"></audio>
+
+<div class="header-box">
+    <!-- الصورة المحدثة -->
+    <img src="https://i.ibb.co/7xpwpg9D/IMG-20260618-WA0016.jpg" alt="الحاج خليل محمد العبسي" class="profile-img">
+    <h3 style="font-size: 16px; margin: 5px 0;">صدقة جارية عن روح المرحوم</h3>
+    <h2 class="name-lg">الحاج خليل محمد العبسي</h2>
+    <p class="ayah">"كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ"</p>
+</div>
+
+<div class="btn-container">
+    <button class="btn" onclick="openVideo('https://www.youtube.com/embed/V2Brp_esIVI')">أذكار الصباح</button>
+    <button class="btn" onclick="openVideo('https://www.youtube.com/embed/Iu_LnPAcHM8')">أذكار المساء</button>
+    <button class="btn" onclick="openVideo('https://www.youtube.com/embed/UEvDeOZ-twY')">الرقية الشرعية</button>
+    <button class="btn" onclick="openVideo('https://www.youtube.com/embed/ERAi06ADAkA')">أدعية للميت</button>
+    <button class="btn" onclick="openVideo('https://www.youtube.com/embed/f6OYaM4xekg')">أدعية للرزق</button>
+    <button class="btn" onclick="showStories()">قصص الأنبياء</button>
+    <button class="btn" onclick="showSurahs()">القرآن الكريم</button>
+</div>
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeVideo()">&times;</span>
+        <div class="video-wrapper">
+            <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<div id="storiesModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeStories()">&times;</span>
+        <h3 style="color: #2e7d32;">قصص الأنبياء</h3>
+        <div class="btn-container" style="grid-template-columns: 1fr;">
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/hC-hfDGgMVg')">قصة سيدنا آدم</button>
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/JAtpnL2dzYk')">قصة سيدنا أيوب</button>
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/At7u6PB0f9s')">قصة سيدنا نوح</button>
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/Ga0A0fRDVIk')">قصة حوت سيدنا يونس</button>
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/p9Je6hHiquw')">قصة النمرود وذو القرنين</button>
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/XaU8a02jur4')">قصة سيدنا صالح</button>
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/ru3Un2Pl-M8')">قصة سيدنا إبراهيم</button>
+            <button class="btn" onclick="openVideo('https://www.youtube.com/embed/G-TNN2s6DlA')">فيلم سيدنا يوسف</button>
+        </div>
+    </div>
+</div>
+
+<div id="surahModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSurahs()">&times;</span>
+        <h3 style="color: #2e7d32;">اختر القارئ</h3>
+        <div class="btn-container" style="grid-template-columns: repeat(2, 1fr);">
+            <button class="surah-btn" onclick="setQari('afs', 'العفاسي')">العفاسي</button>
+            <button class="surah-btn" onclick="setQari('maher', 'المعيقلي')">المعيقلي</button>
+            <button class="surah-btn" onclick="setQari('sds', 'السديس')">السديس</button>
+            <button class="surah-btn" onclick="setQari('ajm', 'العجمي')">العجمي</button>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #2e7d32; margin: 15px 0;">
+        <div id="surahList" class="surah-grid"></div>
+    </div>
+</div>
+
+<script>
+    let currentQari = 'afs';
+    const serverMap = { 'afs': { srv: 'server8', path: 'afs' }, 'maher': { srv: 'server11', path: 'maher' }, 'sds': { srv: 'server11', path: 'sds' }, 'ajm': { srv: 'server12', path: 'ajm' } };
+    function playDua() { const audio = document.getElementById('duaAudio'); audio.currentTime = 0; audio.play().catch(e => console.log("Audio play blocked")); }
+    function setQari(id, name) { playDua(); currentQari = id; alert("تم اختيار القارئ: " + name); }
+    function openVideo(url) { playDua(); closeStories(); document.getElementById('videoFrame').src = url + "?autoplay=1&fs=1"; document.getElementById('videoModal').style.display = "block"; }
+    function closeVideo() { document.getElementById('videoFrame').src = ""; document.getElementById('videoModal').style.display = "none"; }
+    const container = document.getElementById('surahList');
+    const surahNames = ["الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة", "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس", "هود", "يوسف", "الرعد", "إبراهيم", "الحجر", "النحل", "الإسراء", "الكهف", "مريم", "طه", "الأنبياء", "الحج", "المؤمنون", "النور", "الفرقان", "الشعراء", "النمل", "القصص", "العنكبوت", "الروم", "لقمان", "السجدة", "الأحزاب", "سبأ", "فاطر", "يس", "الصافات", "ص", "الزمر", "غافر", "فصلت", "الشورى", "الزخرف", "الدخان", "الجاثية", "الأحقاف", "محمد", "الفتح", "الحجرات", "ق", "الذاريات", "الطور", "النجم", "القمر", "الرحمن", "الواقعة", "الحديد", "المجادلة", "الحشر", "الممتحنة", "الصف", "الجمعة", "المنافقون", "التغابن", "الطلاق", "التحريم", "الملك", "القلم", "الحاقة", "المعارج", "نوح", "الجن", "المزمل", "المدثر", "القيامة", "الإنسان", "المرسلات", "النبأ", "النازعات", "عبس", "التكوير", "الإنفطار", "المطففين", "الإنشقاق", "البروج", "الطارق", "الأعلى", "الغاشية", "الفجر", "البلد", "الشمس", "الليل", "الضحى", "الشرح", "التين", "العلق", "القدر", "البينة", "الزلزلة", "العاديات", "القارعة", "التكاثر", "العصر", "الهمزة", "الفيل", "قريش", "الماعون", "الكوثر", "الكافرون", "النصر", "المسد", "الإخلاص", "الفلق", "الناس"];
+    surahNames.forEach((name, index) => { const btn = document.createElement('button'); btn.className = 'surah-btn'; btn.innerText = (index + 1) + ". " + name; btn.onclick = () => { playDua(); let sNum = (index + 1).toString().padStart(3, '0'); let q = serverMap[currentQari]; window.open(`https://${q.srv}.mp3quran.net/${q.path}/${sNum}.mp3`, '_blank'); }; container.appendChild(btn); });
+    function showSurahs() { playDua(); document.getElementById('surahModal').style.display = "block"; }
+    function closeSurahs() { document.getElementById('surahModal').style.display = "none"; }
+    function showStories() { playDua(); document.getElementById('storiesModal').style.display = "block"; }
+    function closeStories() { document.getElementById('storiesModal').style.display = "none"; }
+</script>
+</body>
+          </html>
